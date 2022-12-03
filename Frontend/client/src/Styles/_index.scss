@@ -1,0 +1,16 @@
+@import "./settings";
+@import "../Styles/pages/home.scss";
+@import "./pages/login.scss";
+@import "./pages/signup.scss";
+@import "../Components/Log/loginForm.scss";
+@import "../Components/Nav/nav.scss";
+@import "../Styles/pages/profil.scss";
+@import "../Components/Profil/updateImg.scss";
+@import "../Components/Profil/profilEdit.scss";
+@import "../Components/Post/card.scss";
+@import "../Components/Post/CordComment.scss";
+@import "../Components/Post/like.scss";
+@import "./pages/formation.scss";
+@import "../Components/Formation/competenceCard.scss";
+@import "../Components/Formation/requestFormation.scss";
+@import "../Styles/pages/adminFormationRequest.scss";

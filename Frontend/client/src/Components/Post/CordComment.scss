@@ -1,0 +1,90 @@
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  .comment-container {
+    display: flex;
+    gap: 17px;
+    background: white;
+    border-radius: 14px;
+    padding: 0.5rem;
+    border: 1px solid lightgrey;
+    .left-part {
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 14px;
+        object-fit: cover;
+      }
+    }
+    .right-part {
+      width: 100%;
+      .comment-header {
+        display: flex;
+        justify-content: space-between;
+        h3 {
+          font-size: smaller;
+          color: #b2b1b0;
+        }
+        span {
+          font-size: smaller;
+          color: #b2b1b0;
+        }
+      }
+      p.comment-content {
+        margin-top: 5px;
+      }
+    }
+    .edit-comment {
+      display: flex;
+      justify-content: flex-end;
+      .edit-comment-form {
+        width: 100%;
+        margin-top: 1rem;
+        position: relative;
+        .modif-com {
+          width: 50%;
+          margin-left: auto;
+        }
+        .mode-edition {
+          margin-left: auto;
+        }
+      }
+      .poub {
+        position: absolute;
+        right: 30px;
+        color: red;
+        top: 2px;
+      }
+    }
+  }
+  .comment-container.user {
+    background: #fff2f2;
+  }
+  .commentForm {
+    display: flex;
+    gap: 1rem;
+    background: #f3f3f3;
+    border-radius: 15px;
+    padding: 1rem;
+    .commentForm-picture img {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      object-fit: cover;
+    }
+    .commentForm-form {
+      width: 100%;
+      margin-top: 10px;
+      .inputCommentaire {
+        width: 50%;
+        margin-left: auto;
+        cursor: pointer;
+        background: #fff2f2;
+        &:hover {
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.155) !important;
+        }
+      }
+    }
+  }
+}

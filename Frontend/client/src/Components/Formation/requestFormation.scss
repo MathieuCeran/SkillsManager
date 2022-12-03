@@ -1,0 +1,60 @@
+.action_request {
+    position: relative;
+
+    .profil_menu_edit {
+      position: absolute;
+      top: 0;
+      left: 105%;
+      padding: 10px 20px;
+      width: 600px;
+      box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      transition: 0.5s;
+      background: white;
+      visibility: hidden;
+      opacity: 0;
+      h3 {
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px 0;
+        line-height: 1.2em;
+        text-transform: capitalize;
+        span {
+          font-size: 14px;
+          color: #cecece;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 12px;
+        left: -5px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        transform: rotate(45deg);
+      }
+    }
+    .active_edit {
+      visibility: visible !important;
+      opacity: 1 !important;
+      box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.405) !important;
+      padding: 2rem;
+      z-index: 1;
+    }
+  }
+  
+  @media screen and (max-width: 1052px) {
+    .action_edit {
+      position: absolute;
+      right: 15px;
+      bottom: -46px;
+      .profil_menu_edit {
+        top: 50px;
+        right: 0;
+        width: 100%;
+      }
+    }
+  }
+  

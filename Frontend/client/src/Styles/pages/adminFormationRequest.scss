@@ -1,0 +1,93 @@
+.requestformation {
+    .requestformation_container {
+        gap: 0.5rem;
+        align-items: center;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 1rem;
+        margin: 0.5rem;
+        border-radius: 15px;
+        border: 1px solid lightgrey;
+        &:hover {
+            box-shadow: 0px 1px 52px rgb(0 0 0 / 16%);
+        }
+        .resquestformation_body {
+            width: 25%;
+            overflow: hidden;
+            span.formaName {
+                font-weight: bold;
+                font-size: 15px;
+                color: #e71588;
+            }
+            form.formStatus {
+                display: flex;
+                gap: 10px;
+                flex-direction: inherit;
+                margin: 0;
+            }
+        }
+        .requestformation_date {
+            flex: 3;
+            span.formaName {
+                font-weight: bold;
+                font-size: 15px;
+                color: #e71588;
+            }
+        }
+        p {
+            font-weight: bold;
+        }
+    }
+    .progress_formation {
+        i.far.fa-trash-alt.poub {
+            color: mediumvioletred;
+            cursor: pointer;
+        }
+    }
+    .sous_menu {
+        display: flex;
+        justify-content: flex-start;
+        gap: 30px;
+        margin-left: 10px;
+        margin-bottom: 30px;
+        p {
+            background: #f7aa0e;
+            padding: 6px;
+            border-radius: 5px;
+            box-shadow: 0px 1px 52px rgb(0 0 0 / 16%) !important;
+            width: 90px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid lightgrey;
+            color: white;
+        }
+    }
+    .accordion-item {
+        .accordion-content {
+            background: white;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            padding: 1rem;
+            margin: 0.5rem;
+            border-radius: 15px;
+            border: 1px solid lightgrey;
+             p {
+                font-weight: bold;
+                color: white;
+                font-size: larger;
+                text-align: center;
+                background: #f7aa0e;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0px 15px 32px rgb(0 0 0 / 16%) !important;
+            }
+            label {
+                font-weight: 600;
+                margin-bottom: 9px;
+                font-size: 14px;
+            }
+        }
+    }
+}
