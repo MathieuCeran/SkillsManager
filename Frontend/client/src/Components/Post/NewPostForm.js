@@ -148,7 +148,7 @@ const NewPostForm = () => {
                   id="color-select"
                   onChange={(e) => setStatus(e.target.value)}
                 >
-                  <option value="">Statut du message</option>
+                  <option value="">Par défaut</option>
                   <option value="1">🔔 Important</option>
                   <option value="2">✅ Résolu</option>
                 </select>
