@@ -4,8 +4,9 @@ import { addPost, getPosts } from "../../actions/post.actions";
 import { DateParser, isEmpty } from "../utils/Utils";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Editor from "ckeditor5-custom-build/build/ckeditor"
+import Editor from "ckeditor5-custom-build/build/ckeditor";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
+import Share from "../../Components/Logo/Share";
 
 const NewPostForm = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,6 +14,7 @@ const NewPostForm = () => {
   const [mediaFront, setMediaFront] = useState(null);
   const [video, setVideo] = useState(null);
   const [media, setMedia] = useState();
+  const [status, setStatus] = useState();
 
   const userData = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
@@ -31,6 +33,7 @@ const NewPostForm = () => {
       const data = new FormData();
       data.append("userId", userData.id);
       data.append("texte", message);
+      data.append("status", status);
       if (media) data.append("media", media);
       if (video) data.append("video", video);
 
@@ -71,6 +74,8 @@ const NewPostForm = () => {
     handleVideo();
   }, [userData, message, video]);
 
+  console.log(status);
+
   return (
     <div className="post-container">
       <ToastContainer />
@@ -92,7 +97,7 @@ const NewPostForm = () => {
                 <div className="post-form">
                   <CKEditor
                     editor={Editor}
-                    data={"Quoi de neuf " + userData.firstname + " ?"}
+                    data={"Quoi de neuf, " + userData.firstname + " ?"}
                     onReady={(editor) => {
                       // You can store the "editor" and use when it is needed.
                       // console.log("Editor is ready to use!", editor);
@@ -101,12 +106,8 @@ const NewPostForm = () => {
                       const data = editor.getData();
                       setMessage(data);
                     }}
-                    onBlur={(event, editor) => {
-                      console.log("Blur.", editor);
-                    }}
-                    onFocus={(event, editor) => {
-                      console.log("Focus.", editor);
-                    }}
+                    onBlur={(event, editor) => {}}
+                    onFocus={(event, editor) => {}}
                   />
                   {/* <textarea
                     name="message"
@@ -119,7 +120,8 @@ const NewPostForm = () => {
                 </div>
                 <div className="display-button">
                   <button className="post-message" onClick={handlePost}>
-                    <i className="far fa-plus-square"></i> Poster !
+                    <Share />
+                    Poster !
                   </button>
                   {message || mediaFront || video ? (
                     <button className="cancel" onClick={cancelPost}>
@@ -140,6 +142,16 @@ const NewPostForm = () => {
                     onChange={(e) => handlePicture(e)}
                   />
                 </div>
+                <select
+                  className="status_message"
+                  name="color-select"
+                  id="color-select"
+                  onChange={(e) => setStatus(e.target.value)}
+                >
+                  <option value="">Statut du message</option>
+                  <option value="1">🔔 Important</option>
+                  <option value="2">✅ Résolu</option>
+                </select>
               </div>
             </div>
           </div>

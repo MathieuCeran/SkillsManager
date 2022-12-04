@@ -150,13 +150,19 @@
               justify-content: center;
               position: relative;
               button.post-message {
-                background: #fd2d01;
+                background: #4e5166;
                 padding: 0.6rem;
                 border-radius: 10px;
                 color: white;
                 border: 1px solid lightgrey;
                 font-size: 0.9rem;
                 cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                img {
+                  width: 23px;
+                }
               }
               button.cancel {
                 background: #fff2f2;
@@ -190,6 +196,14 @@
                   width: 160px;
                   opacity: 0;
                 }
+              }
+            }
+            .image-uplod {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              select#color-select {
+                margin-top: 10px;
               }
             }
           }

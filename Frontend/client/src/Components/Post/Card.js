@@ -17,6 +17,8 @@ import DeleteCard from "./DeleteCard";
 import Like from "./Like";
 import Editor from "ckeditor5-custom-build/build/ckeditor";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
+import StatusMessage from "./StatusMessage";
+import StatusResolve from "./StatusResolve";
 
 const Card = ({ post }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -125,6 +127,8 @@ const Card = ({ post }) => {
             </div>
             <div className="carheader-name">
               <span className="name">
+                {post.status === 1 ? <StatusMessage /> : null}
+                {post.status === 2 ? <StatusResolve /> : null}
                 {!isEmpty(usersData[0]) &&
                   usersData
                     .map((user) => {
@@ -296,7 +300,9 @@ const Card = ({ post }) => {
               onClick={() => setShowComments(!showComments)}
             >
               <i className="far fa-comment-alt"></i>
-              <span>{numbComm} {numbComm > 1 ? ("Commentaires") : ("Commentaire")}</span>
+              <span>
+                {numbComm} {numbComm > 1 ? "Commentaires" : "Commentaire"}
+              </span>
             </div>
           </div>
           {showComments && <CardComments post={post} />}

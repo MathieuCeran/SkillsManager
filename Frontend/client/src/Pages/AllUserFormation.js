@@ -10,11 +10,10 @@ import { CSVLink } from "react-csv";
 const AllUserFormation = () => {
   const userData = useSelector((state) => state.userReducer);
   const FormationsData = useSelector((state) => state.usersformationsReducer);
-  const dispatch = useDispatch();
-
   const dataFormations = Object.values(FormationsData).filter((formation) => {
     return formation;
   });
+  const dispatch = useDispatch();
 
   const headers = [
     { label: "Nom", key: "Nom" },

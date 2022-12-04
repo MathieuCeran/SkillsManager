@@ -22,6 +22,7 @@ exports.createMessage = (req, res, next) => {
         userId: req.token.userId,
         texte: req.body.texte,
         author: req.token.userId,
+        status: req.body.status,
         media: `${req.protocol}://${req.get("host")}/images/upload/${
           req.file.filename
         }`,
@@ -39,6 +40,7 @@ exports.createMessage = (req, res, next) => {
         texte: req.body.texte,
         author: req.token.userId,
         video: req.body.video,
+        status: req.body.status,
       },
       { where: { id: req.token.userId } }
     )
@@ -60,6 +62,7 @@ exports.getAllMessages = async (req, res, next) => {
       "video",
       "createdAt",
       "author",
+      "status",
     ],
   })
     .then((message) => {
@@ -85,6 +88,7 @@ exports.getOneMessage = async (req, res, next) => {
         "video",
         "createdAt",
         "author",
+        "status",
       ],
       where: { id: req.params.id },
     })

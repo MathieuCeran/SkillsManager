@@ -12,6 +12,7 @@ module.exports = (sequelize) => {
       media: { type: Sequelize.STRING, allowNull: true },
       video: { type: Sequelize.STRING, allowNull: true },
       author: { type: Sequelize.INTEGER, allowNull: false },
+      status: { type: Sequelize.INTEGER, defaultValue: 0 },
     },
     { tableName: "messages", timestamps: true, underscored: true }
   );

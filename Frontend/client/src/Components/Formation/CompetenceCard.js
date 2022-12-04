@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUsersFormations } from "../../actions/usersFormation.actions";
 import MiniLogo from "../Logo/MiniLogo";
 import { DateParser } from "../utils/Utils";
+import Challenge from "../Logo/Challenge";
 
 const CompetenceCard = (user) => {
   const userData = useSelector((state) => state.userReducer);
-  const usersFormationsData = useSelector((state) => state.usersformationsReducer);
+  const usersFormationsData = useSelector(
+    (state) => state.usersformationsReducer
+  );
 
   const dispatch = useDispatch();
   const userId = user.user.id;
@@ -18,7 +21,6 @@ const CompetenceCard = (user) => {
   const formations = Object.values(usersFormationsData).filter((formation) => {
     return formation;
   });
-
 
   // if(formations)
   return (
@@ -42,8 +44,11 @@ const CompetenceCard = (user) => {
                 {competence.Formation.formationName}
               </div>
               <div className="formation_lvl">
-                <p><i className="fa-solid fa-layer-group"></i> {competence.Formation.formationLvl}</p>
-                <i className="fas fa-trophy" aria-hidden="true"></i>
+                <p>
+                  <i className="fa-solid fa-layer-group"></i>{" "}
+                  {competence.Formation.formationLvl}
+                </p>
+                <Challenge />
               </div>
             </div>
             {userData.isAdmin ? (
@@ -55,12 +60,9 @@ const CompetenceCard = (user) => {
                 ></progress>
                 <p>{DateParser(competence.formationDate)}</p>
               </div>
-            ) : (
-              null
-            )}
-
+            ) : null}
           </div>
-        )
+        );
       })}
     </>
   );

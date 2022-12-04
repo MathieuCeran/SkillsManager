@@ -39,6 +39,40 @@
         color: #393a4f;
         line-height: 1.2;
         text-transform: capitalize;
+        .important {
+          background: red;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          color: white;
+          padding: 5px;
+          border-radius: 10px 0px 0px 30px;
+          box-shadow: 0px 10px 35px rgb(176 67 67 / 66%);
+          span {
+            margin-left: 10px;
+            margin-right: 10px;
+            i.far.fa-bell.fa-shake {
+              margin-right: 5px;
+            }
+          }
+        }
+        .resolu {
+          background: #5fc26d;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          color: white;
+          padding: 5px;
+          border-radius: 10px 0px 0px 30px;
+          box-shadow: 0px 10px 35px rgb(50 189 63 / 66%);
+          span {
+            margin-left: 20px;
+            margin-right: 20px;
+            i.fas.fa-check.fa-beat {
+              margin-right: 7px;
+            }
+          }
+        }
       }
       .service {
         font-size: 0.8rem;
