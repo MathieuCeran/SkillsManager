@@ -4,9 +4,9 @@ require("dotenv").config();
 let sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
-  process.env.DB_PASS,
+  process.env.STACKHERO_MYSQL_ROOT_PASSWORD,
   {
-    host: process.env.DB_HOST,
+    host: process.env.STACKHERO_MYSQL_HOST,
     dialect: "mysql",
     logging: false,
   }
