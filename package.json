@@ -1,8 +1,8 @@
 {
     "scripts": {
-        "build": "react-scripts build",
-        "start-dev": "(cd Frontend && npm run start) & (cd backend && npm run start)",
-        "start-prod": "(cd Frontend && npm run start) & (cd backend && npm run start)"
+        "build": "(cd Frontend/client && npm run build)",
+        "start-dev": "(cd Frontend/client && npm run start) & (cd backend && npm run start)",
+        "start-prod": "(cd Frontend/client && npm run start) & (cd backend && npm run start)"
     },
     "engines": {
         "node": "^8.5.5"
