@@ -1,8 +1,14 @@
 {
     "scripts": {
-        "build": "(cd Frontend/client && npm run build)",
-        "start-dev": "(cd Frontend/client && npm run start) & (cd backend && npm run start)",
-        "start-prod": "(cd Frontend/client && npm run start) & (cd backend && npm run start)"
+        "build": "npm run build-server & npm run build-client",
+        "build-server": "cd backend && npm install",
+        "build-client": "cd Frontend/client && npm install",
+        "start-dev": "npm run start-server-dev",
+        "start-server-dev": "cd backend && npm run start",
+        "start-client-dev": "cd Frontend/client && npm run start",
+        "start-prod": "npm run start-server-prod",
+        "start-server-prod": "cd backend && npm run start",
+        "start-client-prod": "cd Frontend/client && npm run start"
     },
     "engines": {
         "node": "^8.5.5"
