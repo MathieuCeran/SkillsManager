@@ -20,6 +20,8 @@ module.exports = (sequelize) => {
         defaultValue: 0,
       },
       coach: { type: Sequelize.STRING(255), allowNull: true },
+      resetToken: { type: Sequelize.STRING(255) },
+      expireToken: { type: Sequelize.DATE }
     },
     { tableName: "users", timestamps: true, underscored: true }
   );

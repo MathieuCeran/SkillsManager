@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@azure/msal-browser": "^2.32.0",
+    "@azure/msal-react": "^1.5.0",
     "@ckeditor/ckeditor5-react": "^5.0.2",
     "@reduxjs/toolkit": "^1.8.3",
     "@s-ui/react-molecule-autosuggest": "^2.67.0",

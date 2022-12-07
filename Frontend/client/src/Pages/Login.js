@@ -28,6 +28,7 @@ const Login = () => {
             <div className="login_form-signup">
               <p>Vous n'avez pas de compte ?</p>
               <a href="/signup">Inscription</a>
+              <a href="/forgot">Mot de passe oublié ?</a>
             </div>
           </div>
         </div>

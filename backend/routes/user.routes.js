@@ -12,6 +12,7 @@ router.post("/signup", useCtrl.signup);
 router.post("/login", useCtrl.login);
 router.post("/logout", useCtrl.logoutUser);
 router.get("/jwt", auth, useCtrl.getToken);
+router.post("/reset-password", useCtrl.resetPassword); // reset password
 
 //Route profil utilisateurs
 router.get("/", auth, profilCtrl.getAllUsers);
@@ -24,10 +25,6 @@ router.put("/avatar/:id", multer, uploadAvatarCtrl.uploadProfil);
 
 //Formations utilis
 router.get("/formation/:id", auth, usersFormationCtrl.getUserFormation);
-router.get(
-  "/formation/stats/all",
-  auth,
-  usersFormationCtrl.getAllUsersFormation
-);
+router.get("/formation/stats/all", auth, usersFormationCtrl.getAllUsersFormation);
 
 module.exports = router;

@@ -13,6 +13,8 @@ import AdminFormationRequestPlanifie from "../../Pages/AdminFormationRequestPlan
 import AdminFormationRequestTermine from "../../Pages/AdminFormationRequestTermine";
 import AdminFormationRequestAnnule from "../../Pages/AdminFormationRequestAnnule";
 import AllUserFormation from "../../Pages/AllUserFormation";
+import ForgotPassword from "../../Pages/ForgotPassword";
+
 
 const index = () => {
   return (
@@ -20,6 +22,7 @@ const index = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgot" element={<ForgotPassword />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profil/:id" element={<Profil />} />
         <Route path="/userprofil/:id" element={<UserProfil />} />

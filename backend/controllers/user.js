@@ -3,6 +3,20 @@ const jwt = require("jsonwebtoken");
 // const UserModel = require("../models/user.models");
 const db = require("../database");
 const UserModel = db.User;
+const crypto = require('crypto');
+const nodemailer = require("nodemailer");
+
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true, // use SSL
+  auth: {
+    user: 'skills.manager.local@gmail.com',
+    pass: 'ksokrsvwtbbrcfne'
+  }
+});
+
 
 exports.signup = async (req, res, next) => {
   const email = await UserModel.findOne({
@@ -83,4 +97,37 @@ exports.getToken = (req, res) => {
   } else {
     return res.status(403).json({ message: "No token " });
   }
+};
+
+
+//Mot de passe oublie
+exports.resetPassword = async (req, res) => {
+  crypto.randomBytes(32, (err, buffer) => {
+    if (err) {
+      console.log(err);
+    }
+    const token = buffer.toString("hex")
+
+    UserModel.findOne({ where: { email: req.body.email } })
+      .then(user => {
+        if (!user) {
+          return res.status(422).json({ message: "Aucun utilisateur avec cet email" });
+        }
+        user.resetToken = token
+        user.expireToken = Date.now() + 3600000
+        user.save()
+          .then((result) => {
+            transporter.sendMail({
+              to: user.email,
+              from: "no-reply-local@gmail.com",
+              subject: "Reinitialiser le mot de passe",
+              html: `
+            <h3>Modifier votre mot de passe - SkillsManager</h3>
+            <p>Merci de cliquez sur <a href="http://localhost:3000/forgot/${token}">ce lien</a> pour reinitialiser votre mot de passe</p>
+            `
+            })
+          })
+        res.json({ message: "Verifier votre boite mail" })
+      })
+  })
 };
