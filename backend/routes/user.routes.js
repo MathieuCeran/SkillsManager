@@ -13,6 +13,7 @@ router.post("/login", useCtrl.login);
 router.post("/logout", useCtrl.logoutUser);
 router.get("/jwt", auth, useCtrl.getToken);
 router.post("/reset-password", useCtrl.resetPassword); // reset password
+router.post("/new-password", useCtrl.newPassword); // reset password
 
 //Route profil utilisateurs
 router.get("/", auth, profilCtrl.getAllUsers);

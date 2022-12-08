@@ -5,6 +5,7 @@ const db = require("../database");
 const UserModel = db.User;
 const crypto = require('crypto');
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 
 const transporter = nodemailer.createTransport({
@@ -12,8 +13,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true, // use SSL
   auth: {
-    user: 'skills.manager.local@gmail.com',
-    pass: 'ksokrsvwtbbrcfne'
+    user: process.env.USER,
+    pass: process.env.PASS,
   }
 });
 
@@ -119,15 +120,44 @@ exports.resetPassword = async (req, res) => {
           .then((result) => {
             transporter.sendMail({
               to: user.email,
-              from: "no-reply-local@gmail.com",
+              from: "SkillsManager - Local.fr",
               subject: "Reinitialiser le mot de passe",
               html: `
             <h3>Modifier votre mot de passe - SkillsManager</h3>
-            <p>Merci de cliquez sur <a href="http://localhost:3000/forgot/${token}">ce lien</a> pour reinitialiser votre mot de passe</p>
+            <p>Merci de cliquez sur <a href="http://localhost:3000/reset/${token}">ce lien</a> pour reinitialiser votre mot de passe</p>
             `
             })
           })
         res.json({ message: "Verifier votre boite mail" })
       })
   })
+};
+
+
+//Nouveau Mot de passe 
+exports.newPassword = async (req, res) => {
+  const newPassword = req.body.password
+  const sentToken = req.body.token
+
+  console.log(sentToken);
+
+  UserModel.findOne({ where: { resetToken: sentToken } })
+    .then(user => {
+      console.log(user.id);
+      if (!user) {
+        return res.status(422).json({ error: "Le token à expiré" })
+      }
+      bcrypt.hash(newPassword, 12).then(hashedPassword => {
+        console.log(user.name);
+        user.password = hashedPassword
+        user.resetToken = null
+        user.expireToken = null
+        user.save().then((savedUser) => {
+          res.json({ message: `Mot de passe modifié pour l'utilisateur ${user.name}` })
+        })
+      })
+    })
+    .catch(err => {
+      console.log(err);
+    })
 };
