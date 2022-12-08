@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import validator from "validator";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -49,7 +48,7 @@ const SignupForm = () => {
           console.log(res);
           if (res.data.errors) {
           } else {
-            window.location = "/";
+            toast.success("Utilisateur créé avec succès");
           }
         })
         .catch(function (error) {

@@ -58,6 +58,9 @@ const AdminUsers = () => {
               </div>
             </div>
             <div className="centerBlock_admin">
+              <Link to={"/signup"}>
+                <button className="create_user">Créer un utilisateur</button>
+              </Link>
               <div className="search_admin">
                 <input
                   type="text"

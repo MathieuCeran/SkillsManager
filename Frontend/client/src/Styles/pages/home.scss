@@ -429,6 +429,15 @@
       }
     }
   }
+  button.create_user {
+      position: absolute;
+      right: 20px;
+      background: white;
+      padding: 0.5rem;
+      border: 1px solid grey;
+      border-radius: 5px;
+      cursor: pointer;
+  }
 }
 
 //admin

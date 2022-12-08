@@ -8,7 +8,7 @@ const uploadAvatarCtrl = require("../controllers/avatar");
 const usersFormationCtrl = require("../controllers/userFormation");
 
 //Routes de connexion et de déconnexion
-router.post("/signup", useCtrl.signup);
+router.post("/signup", auth, useCtrl.signup);
 router.post("/login", useCtrl.login);
 router.post("/logout", useCtrl.logoutUser);
 router.get("/jwt", auth, useCtrl.getToken);

@@ -12,7 +12,7 @@ const Login = () => {
       </div>
       <div className="container">
         <div className="container_left">
-          <p>Bienvenue chez</p>
+          <p>SkillsManager</p>
           <Logo />
         </div>
         <div className="container_right">
@@ -20,14 +20,12 @@ const Login = () => {
             <h1>Connexion</h1>
             <p>
               Entrez votre mail ainsi que votre mot de passe, pour accèder au
-              réseau social de l'entreprise
+              SkillsManager
             </p>
             <div className="login_form_formulaire">
               <LoginForm />
             </div>
             <div className="login_form-signup">
-              <p>Vous n'avez pas de compte ?</p>
-              <a href="/signup">Inscription</a>
               <a href="/forgot">Mot de passe oublié ?</a>
             </div>
           </div>
