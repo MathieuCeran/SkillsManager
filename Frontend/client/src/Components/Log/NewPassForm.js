@@ -24,7 +24,7 @@ const NewPassForm = () => {
             },
         })
             .then((result) => {
-                console.log(result.data);
+                toast.success("Mot de passe modifié, vous pouvez maintenant vous connecter")
             })
             .catch(() => toast.error("Merci de verifier vos identifiants"));
     };

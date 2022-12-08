@@ -59,7 +59,7 @@ const CompetenceAssign = () => {
         <br />
 
         <label htmlFor="formationPercent" >
-          % de reussite de la formation (visible que pour les admins) {" "}
+          % de réussite de la formation (visible que pour les admins) {" "}
         </label>
         <input
           type="text"

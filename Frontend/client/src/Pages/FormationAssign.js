@@ -46,11 +46,11 @@ const FormationAssign = () => {
               <div className="left_menu">
                 <ul className="li">
                   <i className="fa-regular fa-address-card"></i>
-                  <Link to={"/adminUsers"}>Gerer les utilisateurs</Link>
+                  <Link to={"/adminUsers"}>Gérer les utilisateurs</Link>
                 </ul>
                 <ul className="li">
                   <i className="far fa-plus-square"></i>
-                  <Link to={"/formation"}>Gerer les formations</Link>
+                  <Link to={"/formation"}>Gérer les formations</Link>
                 </ul>
                 <ul className="li">
                   <i className="fa-brands fa-stack-overflow"></i>
@@ -61,7 +61,7 @@ const FormationAssign = () => {
             <div className="centerBlock_admin">
               <div className="useronline-container-admin">
                 <div className="formation_create">
-                  <p>Les formations aquises de : {users[0].name} {users[0].firstname}</p>
+                  <p>Les formations acquises de : {users[0].name} {users[0].firstname}</p>
                   {isLoading ? (
                     <div className="chargement">
                       <i className="fas fa-spinner fa-spin"></i>

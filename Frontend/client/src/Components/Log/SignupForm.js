@@ -124,7 +124,7 @@ const SignupForm = () => {
           <option value="E-commerce">Chargé de site E-commerce</option>
           <option value="Graphiste">Graphiste</option>
           <option value="Chargé de projet web">Chargé de projet web</option>
-          <option value="Trafic manager">Trafic manager</option>
+          <option value="Traffic manager">Traffic manager</option>
           <option value="Ordonnancement">Ordonnancement</option>
         </select>
 

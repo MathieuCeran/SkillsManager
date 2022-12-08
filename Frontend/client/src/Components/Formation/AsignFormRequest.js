@@ -60,7 +60,7 @@ const AsignFormRequest = ({ request }) => {
         <div className="Requestformation_container">
           <form action="" onSubmit={handleCreateForm}>
             <label htmlFor="formationPercent">
-              % de reussite de la formation (visible que pour les admins)
+              % de réussite de la formation (visible que pour les admins)
             </label>
             <input
               type="text"

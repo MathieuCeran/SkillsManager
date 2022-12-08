@@ -25,8 +25,8 @@ const NewPassword = () => {
                             <NewPassForm />
                         </div>
                         <div className="login_form-signup">
-                            <p>Vous n'avez pas de compte ?</p>
-                            <a href="/signup">Inscription</a>
+                            <p>Me connecter ?</p>
+                            <a href="/login">Connexion</a>
                         </div>
                     </div>
                 </div>

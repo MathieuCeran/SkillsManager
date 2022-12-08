@@ -51,11 +51,11 @@ const AllUserFormation = () => {
               <div className="left_menu">
                 <ul className="li">
                   <i className="fa-regular fa-address-card"></i>
-                  <Link to={"/adminUsers"}>Gerer les utilisateurs</Link>
+                  <Link to={"/adminUsers"}>Gérer les utilisateurs</Link>
                 </ul>
                 <ul className="li">
                   <i className="far fa-plus-square"></i>
-                  <Link to={"/formation"}>Gerer les formations</Link>
+                  <Link to={"/formation"}>Gérer les formations</Link>
                 </ul>
                 <ul className="li">
                   <i className="fa-brands fa-stack-overflow"></i>

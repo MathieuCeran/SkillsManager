@@ -25,7 +25,7 @@ const Trending = () => {
   });
 
   const traficmanager = Object.values(usersData).filter((user) => {
-    return user.service === "Trafic manager";
+    return user.service === "Traffic manager";
   });
 
   const referenttechnique = Object.values(usersData).filter((user) => {
@@ -238,7 +238,7 @@ const Trending = () => {
             <Cpw />
           </AccordionItem>
 
-          <AccordionItem title="Trafic manager">
+          <AccordionItem title="Traffic manager">
             <Traficmanager />
           </AccordionItem>
 

@@ -21,7 +21,7 @@ const ForgotPass = () => {
             },
         })
             .then((result) => {
-                console.log(result.data);
+                toast.success("Merci de vérifier votre boite mail pour reinitialiser votre mot de passe ( vérifier aussi la boite SPAM )")
             })
             .catch(() => toast.error("Utilisateur inconnu"));
     }
