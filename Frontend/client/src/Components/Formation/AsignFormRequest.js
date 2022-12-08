@@ -7,6 +7,8 @@ import {
 } from "../../actions/requestFormation.actions";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { atcb_action } from "add-to-calendar-button";
+import "add-to-calendar-button/assets/css/atcb.css";
 
 const AsignFormRequest = ({ request }) => {
   const [formationPercent, setformationPercent] = useState("");
@@ -74,7 +76,7 @@ const AsignFormRequest = ({ request }) => {
             <br />
             <label htmlFor="formationDate">Date de la formation</label>
             <input
-              type="date"
+              type="datetime-local"
               name="formationDate"
               className="input_signup"
               id="formationDate"
@@ -98,6 +100,34 @@ const AsignFormRequest = ({ request }) => {
               value="Assigner la formation"
             />
           </form>
+          <br />
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              atcb_action({
+                name:
+                  "Formation " +
+                  request.Formation.formationName +
+                  " " +
+                  request.Formation.formationLvl +
+                  " " +
+                  request.user.firstname +
+                  " " +
+                  request.user.name,
+                description: `Formation ${request.Formation.formationName} - ${request.Formation.formationLvl} de ${request.user.firstname} ${request.user.name}`,
+                startDate: formationDate,
+                options: ["Microsoft365", "Outlook.com", "MicrosoftTeams"],
+                timeZone: "Europe/Berlin",
+                iCalFileName: "Reminder-Event",
+              });
+            }}
+          >
+            <input
+              type="submit"
+              value="Ajouter la formation dans le calendrier"
+            />
+          </form>
+          <br />
         </div>
       </div>
     </>

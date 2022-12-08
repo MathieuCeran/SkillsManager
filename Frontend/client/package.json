@@ -11,6 +11,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "add-to-calendar-button": "^1.18.8",
     "axios": "^0.27.2",
     "canvas-confetti": "^1.6.0",
     "ckeditor5-custom-build": "file:ckeditor5",
