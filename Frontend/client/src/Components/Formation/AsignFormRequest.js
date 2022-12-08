@@ -124,7 +124,8 @@ const AsignFormRequest = ({ request }) => {
           >
             <input
               type="submit"
-              value="Ajouter la formation dans le calendrier"
+              className="calendar"
+              value="&#x1F4C6; Ajouter la formation dans le calendrier"
             />
           </form>
           <br />
