@@ -1,15 +1,16 @@
 {
     "scripts": {
-        "build": "npm run build-server",
+        "build": "npm run build-client",
         "build-server": "cd backend && npm install",
         "build-client": "cd Frontend/client && npm install",
         "start-dev": "npm run start-server-dev",
         "start-server-dev": "cd backend && npm run start",
         "start-client-dev": "cd Frontend/client && npm run start",
-        "start": "npm run start-server-prod",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix Frontend/client\"",
+        "server": "nodemon backend/server.js",
         "start-server-prod": "cd backend && npm run start",
         "start-client-prod": "cd Frontend/client && npm run start",
-        "heroku-postbuild": "npm run build"
+        "heroku-postbuild": "npm run build-client && npm run build"
     },
     "engines": {
         "node": "^8.5.5"
