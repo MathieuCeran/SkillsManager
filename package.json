@@ -1,9 +1,11 @@
 {
     "scripts": {
-        "frontend": "npm start --prefix Frontend/client",
-        "backend": "cd backend && nodemon server.js",
-        "dev": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run frontend\"",
-        "heroku-postbuild": "npm install --prefix Frontend/client && npm run build --prefix Frontend/client"
+        "build": "cd Frontend/client && npm run build",
+        "install-client": "cd Frontend/client && npm install",
+        "heroku-postbuild": "npm run install-client && npm run build",
+        "server": "nodemon backend/server.js",
+        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix Frontend/client\"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix Frontend/client\""
     },
     "engines": {
         "node": "^8.5.5"
