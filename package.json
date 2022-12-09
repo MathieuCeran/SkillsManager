@@ -1,7 +1,7 @@
 {
     "scripts": {
         "build": "cd Frontend/client && npm run build",
-        "install-client": "cd Frontend/client && npm install",
+        "install-client": "cd Frontend/client && npm install --max-old-space-size=4096",
         "heroku-postbuild": "npm run install-client && npm run build",
         "server": "nodemon backend/server.js",
         "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix Frontend/client\"",
